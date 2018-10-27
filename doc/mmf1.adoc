@@ -1,0 +1,10 @@
+= MMF1
+
+* Es gibt ein Backendprojekt das außerhalb der IDE lauffähig ist (SpringBoot).
+* Es frisst beim Startup eine Liste von Username-Password-Rollen-Kombis die im
+Verzeichnis XY liegt und fügt sie in die DB ein bzw. updated die Passwörter
+und Rollen falls User schon vorhanden.
+* Es gibt eine Login-Möglichkeit
+* Es gibt einen Endpunkt "Personen", der eine Liste von Dummy-Personen
+zurückgibt, und der nur verfügbar ist wenn man eingeloggt ist.
+* Frontend: Noch nichts.
