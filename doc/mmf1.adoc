@@ -1,10 +1,15 @@
 = MMF1
 
 * Es gibt ein Backendprojekt das außerhalb der IDE lauffähig ist (SpringBoot).
-* Es frisst beim Startup eine Liste von Username-Password-Rollen-Kombis die im
-Verzeichnis XY liegt und fügt sie in die DB ein bzw. updated die Passwörter
-und Rollen falls User schon vorhanden.
-* Es gibt eine Login-Möglichkeit
-* Es gibt einen Endpunkt "Personen", der eine Liste von Dummy-Personen
-zurückgibt, und der nur verfügbar ist wenn man eingeloggt ist.
+* Es nimmt beim Start einen an der Kommandozeile einen Parameter entgegen,
+  der das Admin-Passwort setzt - ansonsten kann sich niemand einloggen (es gibt
+    also kein Default-Passwort o.ä.)
+  Admin: ein User der immer existiert (wird beim Start sichergestellt)
+  (Username "admin") der die Rolle "Admin" besitzt
+* Es gibt eine Login-Möglichkeit (für den Admin-User)
+* Es gibt einen Endpoint zum Listen aller existierenden User der nur erreichbar
+  ist wenn man (mit einer Admin-Rolle) eingeloggt ist
+* Es gibt einen Endpoint zum Anlegen und einen zum Ändern eines Nutzers,
+  unter Angabe von Username, Passwort und Rolle - dieser Endpoint ist ebenfalls
+  nur für einen eingeloggten User mit Admin-Rechten erreichbar.
 * Frontend: Noch nichts.

@@ -24,6 +24,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.byteshaper.tienda8'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+
 compileKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -45,11 +46,24 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-security')
+	implementation('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.6.RELEASE')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation('org.apache.commons:commons-lang3:3.8.1')
+	implementation('com.h2database:h2')
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('org.springframework.security:spring-security-test')
+}
+
+test {
+  testLogging {
+    events "passed", "skipped", "failed", "standardError"
+    info {
+      events "started", "passed", "skipped", "failed", "standardError"
+      exceptionFormat "full"
+    }
+  }
 }

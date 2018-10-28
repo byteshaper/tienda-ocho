@@ -1,0 +1,1 @@
+2018-10-28: als nächstes UserRepo JPA Service UserDetailService SPring Security
