@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty
 
 @Entity
 @Table(name = "user")
-class User: AbstractEntity() {
+class UserEntity: AbstractEntity() {
   
   @Column(unique = true)
   @NotEmpty
