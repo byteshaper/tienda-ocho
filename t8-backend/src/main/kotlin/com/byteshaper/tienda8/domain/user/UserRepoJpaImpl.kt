@@ -8,7 +8,16 @@ class UserRepositoryJpaImpl(val userJpaRepo: UserJpaRepo): UserRepo {
   
   override fun findUserByUsername(username: String): User? {
     val userEntity = userJpaRepo.findByUsername(username)
-    return if(userEntity != null) User(userEntity.username ?: "") else null 
+    
+    if(userEntity != null) {
+      return User.Builder(userEntity.username!!)
+              //.withRole() TODO
+              .withEncryptedPassword(userEntity.encryptedPassword!!)
+              .withSalt(userEntity.salt!!)
+              .build()
+    }
+    
+    return null;
   }
   
 }

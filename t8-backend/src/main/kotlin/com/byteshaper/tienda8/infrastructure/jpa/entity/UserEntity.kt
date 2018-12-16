@@ -1,4 +1,4 @@
-package com.byteshaper.tienda8.domain.entity
+package com.byteshaper.tienda8.infrastructure.jpa.entity
 
 import javax.persistence.Entity
 import javax.persistence.Table
@@ -15,7 +15,7 @@ class UserEntity: AbstractEntity() {
   var username: String? = null
   
   @NotEmpty
-  var passwordHash: String? = null
+  var encryptedPassword: String? = null
   
   @NotEmpty
   var salt: String? = null

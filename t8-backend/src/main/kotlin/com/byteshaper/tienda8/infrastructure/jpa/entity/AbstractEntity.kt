@@ -1,7 +1,7 @@
-package com.byteshaper.tienda8.domain.entity
+package com.byteshaper.tienda8.infrastructure.jpa.entity
 
 import javax.persistence.MappedSuperclass
-import org.springframework.data.annotation.Id
+import javax.persistence.Id
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 
